@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Kholle1</title>
+</head>
+<body>
+    <div class="forms">
+        <form action="traitement.php" method = "post" id="myForm">
+            <h2 style="text-align: center;">Inscription</h2>
+            <div class="name" id="inline1">
+                <label for="nom">Nom</label>
+                <br>
+               
+                <input type="text" name="Nom" id="Nom" placeholder="TOSSOU">
+                <br>
+                <span id="error"></span>
+            </div>
+           
+            <div class="lastname" id="inline1">
+                <label for="Prenom">Prénom</label>
+                <br>
+                <input type="text" name="Prenom" id="prenom" placeholder="Keyvan">
+                <br>
+                <span id="error1"></span>
+            </div>
+            <br></br>
+            <div class="mail" id="inline2">
+                <label for="Email">Email</label>
+                <br>
+                <input type="text" name="Email" id="email" placeholder="tossoukeyvan@gmail.com">
+                <br>
+                <span id="error2"></span>
+            </div>
+            
+            <div class="phone" id="inline2">
+                <label for="Tel">Tel</label>
+                <br>
+                <input type="text" name="Tel" id="tel" placeholder="60393141">
+                <br>
+                <span id="error3"></span>
+            </div>
+            <br></br>
+            <div class="level">
+                <label for="Niveau">Niveau</label>
+                <br>
+                <select name="niveau" id="niveau">
+                    <option value="Info1">Informatique 1</option>
+                    <option value="Info2">Informatique 2</option>
+                    <option value="Info3">Informatique 3</option>       
+                </select>
+
+            </div>
+           <br>
+           <div class="sub">
+                 <input type="submit" value="Envoyer" name="Envoyer" id="but">
+           </div>
+            
+        </form>
+    </div>
+
+</body>
+
+<script>
+    let myForm =  document.getElementById('myForm');
+let myError = document.getElementById('error');
+
+myForm.addEventListener('submit', function(e){
+    let myName = document.getElementById('Nom');
+    let myLastname = document.getElementById('prenom');
+    let myPhone = document.getElementById('tel');
+    let myEmail = document.getElementById('email');          
+    let myRegex = /^([a-zA-Z-\s]+){3,20}$/;
+    
+    let RegexMail = /^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/;
+    //let myRegexMail=/^\A(?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])\z$/;
+    //[^\W][a-zA-Z0-9-_]+[\W]\@[a-z]+[\W]\.[a-z]{2-6}
+    let myRegexPhone = /^[0-9]{8}$/;
+
+    if (myName.value.trim() == "") {
+        
+        myError.innerHTML = "Veuillez entrer votre nom";
+        myError.style.color = 'red';
+        myName.style.border = '1px solid red';
+        e.preventDefault();
+    }else if (myRegex.test(myName.value) == false) {
+        
+        myError.innerHTML = "Donc c'est ton nom kabi!";
+        myName.style.border = '1px solid red';
+        myError.style.color = 'red';
+        e.preventDefault();                
+    }else{
+
+        if (myLastname.value.trim() == "") {
+            let myError1 = document.getElementById('error1');
+            myError.innerHTML = "";
+            myError.style.color = '';
+            myName.style.border = '';
+
+            myError1.innerHTML = "Veuillez entrer votre prénom";
+            myError1.style.color = 'red';
+            myLastname.style.border = '1px solid red';
+            e.preventDefault();
+        }else if (myRegex.test(myLastname.value) == false) {
+            let myError1 = document.getElementById('error1');
+            myError1.innerHTML = "Donc c'est ton prénom kabi!";
+            myLastname.style.border = '1px solid red';
+            myError1.style.color = 'red';
+            e.preventDefault();           
+            
+        }else{
+            if (myEmail.value.trim() == "") {
+                let myErrorMail = document.getElementById('error2');
+                let myError1 = document.getElementById('error1');
+                myError1.innerHTML = "";
+                myError1.style.color = '';
+                myLastname.style.border = '';
+
+
+                myErrorMail.innerHTML = "Veuillez renseigner votre mail";
+                myErrorMail.style.color = 'red'; 
+                myEmail.style.border = '1px solid red';
+                e.preventDefault();                    
+            }else if (RegexMail.test(myEmail.value) == false) {
+                let myErrorMail = document.getElementById('error2');
+                myErrorMail.innerHTML = "Respectez le format d'une adresse mail svp";
+                myEmail.style.border = '1px solid red';
+                myErrorMail.style.color = 'red';
+                e.preventDefault();        
+            }else{
+                if (myPhone.value.trim() == "") {
+                    let myErrorMail = document.getElementById('error2');
+                    myErrorMail.innerHTML = "";
+                    myErrorMail.style.color = '';
+                    myEmail.style.border = '';
+
+
+                    let myError3 = document.getElementById('error3');
+                    myError3.innerHTML = "Veuillez entrer votre numéro";
+                    myError3.style.color = 'red';
+                    myPhone.style.border = '1px solid red'; 
+                    e.preventDefault();             
+
+                    
+                }else if(myRegexPhone.test(myPhone.value) == false){
+                    let myError3 = document.getElementById('error3');
+                    myError3.innerHTML = "Pardon donne ton vrai numéro, kinklin";
+                    myError3.style.color = 'red';
+                    myPhone.style.border = '1px solid red';
+                    e.preventDefault();
+                }                   
+            }
+        }
+    
+    }
+});
+</script>
+</html>

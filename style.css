@@ -1,0 +1,79 @@
+body{
+    background: #333333;
+    background: url(imgs/Nature-Paysage-portfolio-17-novembre-2019-0017-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+
+}
+
+.forms
+{
+    width: 800px;
+    height: 350px;
+    background-color: rgb(211, 211, 211);
+    margin: 30px auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px  8px rgb(41, 33, 33);
+}
+
+.name{
+    padding-left: 70px;
+}
+
+.lastname{
+    float: right;
+    padding-right: 70px;
+}
+.mail{
+    padding-left: 70px;
+}
+.phone{
+    float: right;
+    padding-right: 70px;
+}
+.level{
+    padding-left: 70px;
+}
+#niveau{
+    width: 660px;
+    height: 30px;
+}
+
+
+#but{
+    position: relative;
+    background-color: rgb(21, 96, 225);
+    color:white;
+    width: 100px;
+    margin: 30px auto 0px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0px;
+}
+#but:hover{
+    background-color: rgb(255, 123, 0);
+}
+
+.sub{
+    text-align: center;
+}
+
+
+
+
+
+#inline1{
+    display: inline-block;    
+}
+#inline2{
+    display: inline-block;
+}

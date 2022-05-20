@@ -1,0 +1,104 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background: #e6c2c2;
+    background: url(imgs/Nature-Paysage-portfolio-17-novembre-2019-0017-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+
+}
+
+.lignes{
+    height: 150px;
+    padding-top: 50px;
+}
+.l1{
+    width: 300px;
+    color: #f1f1f1;
+    border: 1px solid;
+}
+.l2{
+    width: 150px;
+    color: #f1f1f1;
+    border: 1px solid;
+    margin-top: 30px;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 50px;
+    color:#f1f1f1;
+    
+}
+h1 span{
+    position:relative;
+}
+
+.container-btns{
+    position: relative;
+    top: 50px;
+    float: left;
+    width: 500px;
+}
+
+.btn-first{
+    position: relative;
+    border: 2px solid #f1f1f1;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    padding: 10px;
+    color: #f1f1f1;
+    width: 150px;
+    cursor: pointer;
+   
+}
+.button{
+    position: relative;
+    width: 300px;
+    margin-top: 30px;
+    margin-left: 200px;
+    text-align: center;
+}
+
+.btn-first:hover{
+    background-color: #f1f1f1;
+    color: #444;
+}
+
+h2{
+    position: relative;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    text-align: center;
+    width: 300px;
+    margin: 0px auto;
+    
+    
+}
+
+.canvas{
+    border:1px solid black;
+    
+}
+
+.anim_can{
+    position: relative;
+    margin-top: -120px;
+    margin-right: 45px;
+    opacity: 0.7;
+    float: right;
+}
+.neutre{
+    height: 10px;
+    clear: both;
+}
+
+
+
