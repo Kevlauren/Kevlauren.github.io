@@ -4,7 +4,8 @@
     padding: 0;
 }
 .container-fluid{
-    background-size: cover;
+    height: 100vh;
+    
 }
 
 
@@ -13,6 +14,7 @@ body{
     background: url(imgs/Nature-Paysage-portfolio-17-novembre-2019-0017-3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    
    
 
 }
