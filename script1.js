@@ -12,10 +12,10 @@ const cont_canvas = document.querySelector('.anim_can')
 window.addEventListener('load', () =>{
     const TL = gsap.timeline({paused:true});
     TL
-    .staggerFrom(titreSpans, 1,{top:-50, opacity:0, ease:"power2.out"}, 0.3)
+    .staggerFrom(titreSpans, 2,{top:-50, opacity:0, ease:"power2.out"}, 0.3)
     .from(btn, 2,{left:-300, opacity:0, ease:"power2.out"}, '-=1')
-    .from(l1, 2, {width: 0, ease:"power2.out"}, '-=2')
-    .from(l2, 2, {width: 0, ease:"power2.out"}, '-=2')
+    .from(l1, 1, {width: 0, ease:"power2.out"}, '-=2')
+    .from(l2, 1, {width: 0, ease:"power2.out"}, '-=2')
     .staggerFrom(header, 2, {bottom: -100, opacity:0, ease:"power2.out"}, 0.3, '-=1');
     //.staggerFrom(cont_canvas, 1, {right:-50, ease:"power2.out"}, 0.3);
     
@@ -28,7 +28,8 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
 
 canvas.width = 300;
-canvas.height = 230;
+canvas.height = 250;
+
 
 
 
@@ -51,7 +52,7 @@ function anim(){
 
     ctx.clearRect(500,500, canvas.width,canvas.height);
     ctx.beginPath();
-    ctx.arc(z,175,30,0,2*Math.PI);
+    ctx.arc(z,100,30,0,2*Math.PI);
     ctx.fillStyle = '#f1f1f1';
     ctx.strokeStyle = '#f1f1f1';    
     ctx.fill(); 
